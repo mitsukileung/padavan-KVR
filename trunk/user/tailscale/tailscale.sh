@@ -207,7 +207,7 @@ start_ts() {
 	if [ ! -L "$tailscale" ] || [ "$(ls -l $tailscale | awk '{print $NF}')" != "$tailscaled" ] ; then
 		ln -sf "$tailscaled" "$tailscale"
 	fi
-	#[ $(($($tailscaled -h | wc -l))) -lt 3 ] && logger -t "【Tailscale】" "程序${tailscaled}不完整，无法运行！" 
+	#[[ "$($tailscaled -h 2>&1 | wc -l)" -lt 2 ]]  && logger -t "【Tailscale】" "程序${tailscaled}不完整，无法运行！" 
 	$tailscaled --cleanup >/tmp/tailscale.log
 	tdCMD="$tailscaled --state=/etc/storage/tailscale/lib/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock"
 	logger -t "【Tailscale】" "运行主程序 $tdCMD"

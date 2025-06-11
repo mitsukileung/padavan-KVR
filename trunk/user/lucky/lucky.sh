@@ -112,7 +112,7 @@ lucky_dl() {
 		
 		if [ $? -eq 0 ]; then
 			chmod +x /tmp/var/lucky
-   			if [ "$(($(/tmp/var/lucky -h 2>&1 | wc -l)))" -gt 3 ] ; then
+   			if [[ "$(/tmp/var/lucky -h 2>&1 | wc -l)" -gt 3 ]] ; then
 				logg "下载成功"
 				lk_ver=$(/tmp/var/lucky -info | awk -F'"Version":"' '{print $2}' | awk -F'"' '{print $1}')
 				if [ -z "$lk_ver" ] ; then

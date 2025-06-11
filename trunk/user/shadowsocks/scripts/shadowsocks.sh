@@ -68,7 +68,7 @@ find_bin() {
 				curl -L -k -s -o "/tmp/v2ray" --connect-timeout 10 --retry 3 "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/v2ray/v2ray" || wget --no-check-certificate -q -O "/tmp/v2ray" "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/v2ray/v2ray"
 				if [ "$?" = 0 ] ; then
 					chmod +x /tmp/v2ray
-					if [ "$(($(/tmp/v2ray -h 2>&1 | wc -l)))" -gt 3 ] ; then
+					if [[ "$(/tmp/v2ray -h 2>&1 | wc -l)" -gt 3 ]] ; then
 						echo "$(date "+%Y-%m-%d %H:%M:%S") : /tmp/v2ray 下载成功" >>/tmp/ssrplus.log
 						ret=/tmp/v2ray
 						break
@@ -109,7 +109,7 @@ find_bin() {
 				curl -L -k -s -o "/tmp/xray" --connect-timeout 10 --retry 3 "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/xray/xray" || wget --no-check-certificate -q -O "/tmp/xray" "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/xray/xray"
 				if [ "$?" = 0 ] ; then
 					chmod +x /tmp/xray
-					if [ "$(($(/tmp/xray -h 2>&1 | wc -l)))" -gt 3 ] ; then
+					if [[ "$(/tmp/xray -h 2>&1 | wc -l)" -gt 3 ]] ; then
 						echo "$(date "+%Y-%m-%d %H:%M:%S") : /tmp/xray 下载成功" >>/tmp/ssrplus.log
 						ret=/tmp/xray
 						break
@@ -141,7 +141,7 @@ find_bin() {
 				curl -L -k -s -o "/tmp/trojan" --connect-timeout 10 --retry 3 "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/trojan/trojan" || wget --no-check-certificate -q -O "/tmp/trojan" "${proxy}https://github.com/lmq8267/padavan-KVR/blob/main/trunk/user/trojan/trojan"
 				if [ "$?" = 0 ] ; then
 					chmod +x /tmp/trojan
-					if [ "$(($(/tmp/trojan -h 2>&1 | wc -l)))" -gt 3 ] ; then
+					if [[ "$(/tmp/trojan -h 2>&1 | wc -l)" -gt 3 ]] ; then
 						echo "$(date "+%Y-%m-%d %H:%M:%S") : /tmp/trojan 下载成功" >>/tmp/ssrplus.log
 						ret=/tmp/trojan
 						break
