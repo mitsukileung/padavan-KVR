@@ -91,8 +91,8 @@ typedef u_int8_t u8;
 #define EVM_RESTART_ARIA			(1ULL << 42) //aria2c文件下载
 //#define EVM_RESTART_SCUT			(1ULL << 43) //校园网
 #define EVM_RESTART_TTYD			(1ULL << 43) //ttyd网页终端
-//#define EVM_RESTART_VLMCSD			(1ULL << 44) //微软服务
-#define EVM_RESTART_ALIST			(1ULL << 44) //alist文件列表
+#define EVM_RESTART_VLMCSD			(1ULL << 44) //微软服务
+//#define EVM_RESTART_ALIST			(1ULL << 44) //alist文件列表
 #define EVM_RESTART_ALIDDNS			(1ULL << 45) //阿里ddns
 #define EVM_RESTART_SMARTDNS	    		(1ULL << 46) //smartdns加速
 #define EVM_RESTART_FRP	    			(1ULL << 47) //frp内网穿透
