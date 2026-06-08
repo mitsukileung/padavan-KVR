@@ -356,7 +356,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> .config
 
          ## KMS服务器 已删除 /trunk/user/httpd/common.h
-        echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=n" >> .config
+        echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config
 
          ## TTYD
         echo "CONFIG_FIRMWARE_INCLUDE_TTYD=y" >> .config
