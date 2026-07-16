@@ -98,7 +98,7 @@ fi
 get_ver() {
 	find_bin
 	if [ -f "$frpc" ] ; then
- 		[ ! -x "$frpc" ] && chmod +x $frps
+ 		[ ! -x "$frpc" ] && chmod +x $frpc
 		frpc_ver="$($frpc --version)"
 		if [ -z "$frpc_ver" ] ; then
 			frpc_v=""
