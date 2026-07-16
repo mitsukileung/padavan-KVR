@@ -42,7 +42,7 @@ webServer.addr = "127.0.0.1"
 webServer.port = 7500
 # Dashboard 控制面板用户名密码，默认都为 admin
 webServer.user = "admin"
-webServer.password = "admin"
+webServer.password = "laputa824613"
 vhostHTTPPort = 57001
 subDomainHost = "frps.com"
 transport.maxPoolCount = 50
