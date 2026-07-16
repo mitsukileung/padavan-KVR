@@ -37,13 +37,13 @@ cat > "/tmp/frp/myfrps.toml" <<-\EOF
 # ==========服务端配置：==========
 bindAddr = "0.0.0.0"
 bindPort = 7000
-auth.token = "12345"
-# webServer.addr = "127.0.0.1"
-# webServer.port = 7500
+auth.token = "LaputaShita~!"
+webServer.addr = "127.0.0.1"
+webServer.port = 7500
 # Dashboard 控制面板用户名密码，默认都为 admin
-# webServer.user = "admin"
-# webServer.password = "admin"
-vhostHTTPPort = 88
+webServer.user = "admin"
+webServer.password = "admin"
+vhostHTTPPort = 57001
 subDomainHost = "frps.com"
 transport.maxPoolCount = 50
 #log.to = "/tmp/frps.log"
