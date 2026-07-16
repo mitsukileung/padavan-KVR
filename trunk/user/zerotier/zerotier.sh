@@ -44,16 +44,13 @@ start_instance() {
 	nwid="$(nvram get zerotier_id)"
 	moonid="$(nvram get zerotier_moonid)"
 	secret="$(nvram get zerotier_secret)"
+	[ -z "$nwid" ] && nwid="9f77fc393e758059"
 	[ -d "$config_path/networks.d" ] || mkdir -p $config_path/networks.d
 	[ -d "$config_path/moons.d" ] || mkdir -p "$config_path/moons.d"
 	if [ -n "$port" ]; then
 		args="$args -p$port"
 	fi
- 	if [ ! -z "$nwid" ] ; then
-		[ ! -f "$config_path/networks.d/$nwid.conf" ] && touch $config_path/networks.d/$nwid.conf
-  	else
-		logger -t "【zerotier】" "ZeroTier 网络ID为空，请正确填写！"
-   	fi
+	[ ! -f "$config_path/networks.d/$nwid.conf" ] && touch $config_path/networks.d/$nwid.conf
  	if [ -s "$config_path/identity.secret" ] ; then
 		secret="$(cat $config_path/identity.secret)"
   	fi
@@ -141,6 +138,7 @@ rules() {
 		sleep 1
 	done
 	nat_enable=$(nvram get zerotier_nat)
+	[ -z "$nat_enable" ] && nat_enable="1"
 	zt0=$(ifconfig | grep zt | awk '{print $1}')
 	del_rules
  	logger -t "【zerotier】" "添加${zt0}防火墙规则中..."
@@ -298,6 +296,7 @@ update_zero() {
 
 start_zero() {
 	zt_enable=$(nvram get zerotier_enable)
+	[ -z "$zt_enable" ] && zt_enable="1"
 	[ "$zt_enable" = "1" ] || exit 1
 	logger -t "【zerotier】" "正在启动zerotier"
 	sed -Ei '/【zerotier】|^$/d' /tmp/script/_opt_script_check
