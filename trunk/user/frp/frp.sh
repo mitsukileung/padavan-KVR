@@ -2,7 +2,6 @@
 
 frpc_enable=`nvram get frpc_enable`
 frps_enable=`nvram get frps_enable`
-[ -z "$frps_enable" ] && frps_enable="1"
 frp_tag=`nvram get frp_tag`
 http_username=`nvram get http_username`
 user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
@@ -99,7 +98,7 @@ fi
 get_ver() {
 	find_bin
 	if [ -f "$frpc" ] ; then
- 		[ ! -x "$frpc" ] && chmod +x $frpc
+ 		[ ! -x "$frpc" ] && chmod +x $frps
 		frpc_ver="$($frpc --version)"
 		if [ -z "$frpc_ver" ] ; then
 			frpc_v=""
@@ -238,7 +237,7 @@ frp_start ()
   		if [ ! -z "$frp_tag" ] ; then
   			frp_dl $frp_tag
   		else
-  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.70.0版本" && tag="0.70.0"
+  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.61.0版本" && tag="v0.61.0"
   			frp_dl $tag
   		fi
   	fi
@@ -260,7 +259,7 @@ frp_start ()
   		if [ ! -z "$frp_tag" ] ; then
   			frp_dl $frp_tag
   		else
-  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.70.0版本" && tag="0.70.0"
+  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.61.0版本" && tag="v0.61.0"
   			frp_dl $tag
   		fi
   	fi
