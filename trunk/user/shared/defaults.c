@@ -830,7 +830,7 @@ struct nvram_pair router_defaults[] = {
 	/*frp*/
 	{ "frpc_enable", "0" },
 	{ "frps_enable", "1" },
-	{ "frp_tag", "0.70.0" },
+	{ "frp_tag", "" },
 #endif
 
 #if defined(APP_NATPIERCE)
