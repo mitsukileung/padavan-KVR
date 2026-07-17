@@ -183,7 +183,7 @@ function done_validating(action){
 										<tr>
 											<th width="30%" style="border-top: 0 none;">指定版本</th>
 											<td style="border-top: 0 none;">
-												<input type="text" maxlength="12" class="input" size="15" placeholder="v0.61.0" id="frp_tag" name="frp_tag" value="<% nvram_get_x("","frp_tag"); %>" onKeyPress="return is_string(this,event);" />
+												<input type="text" maxlength="12" class="input" size="15" placeholder="0.70.0" id="frp_tag" name="frp_tag" value="<% nvram_get_x("","frp_tag"); %>" onKeyPress="return is_string(this,event);" />
 											&nbsp;<span style="color:#888;">留空使用最新版本</span></td>
 										</tr>
 										<tr id="row_post_wan_script">
