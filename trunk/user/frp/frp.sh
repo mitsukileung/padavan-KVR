@@ -108,7 +108,7 @@ get_ver() {
 	fi
 	if [ -f "$frps" ] ; then
  		[ ! -x "$frps" ] && chmod +x $frps
-		frpc_ver="$($frps --version)"
+		frps_ver="$($frps --version)"
 		if [ -z "$frps_ver" ] ; then
 			frps_v=""
 		else
