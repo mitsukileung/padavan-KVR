@@ -237,7 +237,7 @@ frp_start ()
   		if [ ! -z "$frp_tag" ] ; then
   			frp_dl $frp_tag
   		else
-  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.70.0版本" && tag="0.70.0"
+  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用0.70.0版本" && tag="0.70.0"
   			frp_dl $tag
   		fi
   	fi
@@ -259,7 +259,7 @@ frp_start ()
   		if [ ! -z "$frp_tag" ] ; then
   			frp_dl $frp_tag
   		else
-  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用v0.70.0版本" && tag="0.70.0"
+  			[ -z "$tag" ] && logger -t "【Frp】" "未获取到最新版本，暂用0.70.0版本" && tag="0.70.0"
   			frp_dl $tag
   		fi
   	fi
